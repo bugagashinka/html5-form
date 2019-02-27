@@ -14,14 +14,16 @@
         <div class="container">
           <section class="row heading">
             <button type="button" class="button">Go back</button>
-            <svg class="logo">
-              <g transform="translate(0,-942.36218)">
-                <path
-                  d="m 54.859268,946.47005 c -28.69536,0 -51.9687498,23.10091 -51.9687498,51.62499 0,28.52406 23.2733898,51.65626 51.9687498,51.65626 28.69536,0 51.937502,-23.1322 51.937502,-51.65626 0,-28.52408 -23.242142,-51.62499 -51.937502,-51.62499 z m -0.4375,18.75 c 18.31234,0 33.1875,14.84392 33.1875,33.15629 0,6.41546 -1.84038,12.39376 -5,17.46866 l 7.375,19.1563 -19.90625,-7.4063 c -4.66726,2.5026 -9.99336,3.9375 -15.65625,3.9375 -18.31233,0 -33.15625,-14.8439 -33.15625,-33.15616 0,-18.31237 14.84392,-33.15629 33.15625,-33.15629 z m 0.0625,19.3125 c -7.89864,0 -14.3125,6.43599 -14.3125,14.37499 0,7.93896 6.41386,14.37496 14.3125,14.37496 7.89865,0 14.28125,-6.436 14.28125,-14.37496 0,-7.939 -6.3826,-14.37499 -14.28125,-14.37499 z"
-                  style="fill:#DADDE7;fill-opacity:1;stroke:#DADDE7;stroke-width:1.07500005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
-                />
-              </g>
-            </svg>
+            <a href="#" class="logo">
+              <svg>
+                <g transform="translate(0,-942.36218)">
+                  <path
+                    d="m 54.859268,946.47005 c -28.69536,0 -51.9687498,23.10091 -51.9687498,51.62499 0,28.52406 23.2733898,51.65626 51.9687498,51.65626 28.69536,0 51.937502,-23.1322 51.937502,-51.65626 0,-28.52408 -23.242142,-51.62499 -51.937502,-51.62499 z m -0.4375,18.75 c 18.31234,0 33.1875,14.84392 33.1875,33.15629 0,6.41546 -1.84038,12.39376 -5,17.46866 l 7.375,19.1563 -19.90625,-7.4063 c -4.66726,2.5026 -9.99336,3.9375 -15.65625,3.9375 -18.31233,0 -33.15625,-14.8439 -33.15625,-33.15616 0,-18.31237 14.84392,-33.15629 33.15625,-33.15629 z m 0.0625,19.3125 c -7.89864,0 -14.3125,6.43599 -14.3125,14.37499 0,7.93896 6.41386,14.37496 14.3125,14.37496 7.89865,0 14.28125,-6.436 14.28125,-14.37496 0,-7.939 -6.3826,-14.37499 -14.28125,-14.37499 z"
+                    style="fill:#DADDE7;fill-opacity:1;stroke:#DADDE7;stroke-width:1.07500005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+                  />
+                </g>
+              </svg>
+            </a>
             <button type="button" class="button">Sign In</button>
           </section>
         </div>
@@ -125,12 +127,20 @@
           </section>
           <section class="row upload">
             <h2>
-              Upload your documents <span>(Doc, ocx, Text, PDF, markdown)</span>
+              Upload your documents
+              <span class="file-types-title"
+                >(Doc, Docx, Text, PDF, markdown)</span
+              >
             </h2>
             <div class="button upload-button">
               <img class="icon upload-icon" src="./img/upload.svg" alt="" />
               <label for="file-upload">Upload a new file</label>
-              <input id="file-upload" name="filePath" type="file" />
+              <input
+                id="file-upload"
+                name="filePath"
+                type="file"
+                accept=".doc,.docx,.txt,.pdf,.md"
+              />
               <span class="upload-button-border"></span>
             </div>
 
@@ -178,7 +188,7 @@
           <section class="row languages">
             <h2>Choose your languages pairings</h2>
             <div class="lang-from">
-              <label class="">From</label>
+              <label class="lang-label lang-from-label">From</label>
               <div class="select">
                 <select name="from" required>
                   <option value="">Choose</option>
@@ -191,7 +201,7 @@
               </div>
             </div>
             <div class="lang-to">
-              <label class="">To</label>
+              <label class="lang-label lang-to-label">To</label>
               <div class="select">
                 <select name="lang-to-1" required>
                   <option value="">Choose</option>
@@ -275,14 +285,16 @@
           </section>
           <section class="row timeline">
             <h2>Tell us how urgent this job is</h2>
-            <input
-              type="range"
-              class="slider"
-              min="0"
-              max="2"
-              value="1"
-              step="1"
-            />
+            <div class="slider-container">
+              <input
+                type="range"
+                class="slider"
+                min="0"
+                max="2"
+                value="1"
+                step="1"
+              />
+            </div>
             <div class="range-labels">
               <span class="range-label-item">I got time</span>
               <span class="range-label-item">Average</span>
@@ -427,7 +439,7 @@
               <div class="field-block">
                 <label for="expiry-date" class="input-label">Expiry date</label>
                 <input
-                  type="text"
+                  type="date"
                   id="expiry-date"
                   class="input-field input-date"
                   name="expiry-date"
@@ -438,7 +450,6 @@
                   placeholder="DD/MM/YY"
                   required
                 />
-                <span class="check-status date-check-status"></span>
               </div>
               <div class="field-block">
                 <label for="card-code" class="input-label">Code</label>
@@ -500,19 +511,21 @@
         <div class="social-links">
           <h4><span class="icon">icon</span>Connect with us</h4>
           <ul class="list">
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Linkedin</li>
+            <li><a class="social-link" href="#">Facebook</a></li>
+            <li><a class="social-link" href="#">Twitter</a></li>
+            <li><a class="social-link" href="#">Linkedin</a></li>
           </ul>
         </div>
-        <svg class="logo">
-          <g transform="translate(0,-942.36218)">
-            <path
-              d="m 54.859268,946.47005 c -28.69536,0 -51.9687498,23.10091 -51.9687498,51.62499 0,28.52406 23.2733898,51.65626 51.9687498,51.65626 28.69536,0 51.937502,-23.1322 51.937502,-51.65626 0,-28.52408 -23.242142,-51.62499 -51.937502,-51.62499 z m -0.4375,18.75 c 18.31234,0 33.1875,14.84392 33.1875,33.15629 0,6.41546 -1.84038,12.39376 -5,17.46866 l 7.375,19.1563 -19.90625,-7.4063 c -4.66726,2.5026 -9.99336,3.9375 -15.65625,3.9375 -18.31233,0 -33.15625,-14.8439 -33.15625,-33.15616 0,-18.31237 14.84392,-33.15629 33.15625,-33.15629 z m 0.0625,19.3125 c -7.89864,0 -14.3125,6.43599 -14.3125,14.37499 0,7.93896 6.41386,14.37496 14.3125,14.37496 7.89865,0 14.28125,-6.436 14.28125,-14.37496 0,-7.939 -6.3826,-14.37499 -14.28125,-14.37499 z"
-              style="fill:#383D50;fill-opacity:1;stroke:#383D50;stroke-width:1.07500005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
-            />
-          </g>
-        </svg>
+        <a class="logo" href="#">
+          <svg>
+            <g transform="translate(0,-942.36218)">
+              <path
+                d="m 54.859268,946.47005 c -28.69536,0 -51.9687498,23.10091 -51.9687498,51.62499 0,28.52406 23.2733898,51.65626 51.9687498,51.65626 28.69536,0 51.937502,-23.1322 51.937502,-51.65626 0,-28.52408 -23.242142,-51.62499 -51.937502,-51.62499 z m -0.4375,18.75 c 18.31234,0 33.1875,14.84392 33.1875,33.15629 0,6.41546 -1.84038,12.39376 -5,17.46866 l 7.375,19.1563 -19.90625,-7.4063 c -4.66726,2.5026 -9.99336,3.9375 -15.65625,3.9375 -18.31233,0 -33.15625,-14.8439 -33.15625,-33.15616 0,-18.31237 14.84392,-33.15629 33.15625,-33.15629 z m 0.0625,19.3125 c -7.89864,0 -14.3125,6.43599 -14.3125,14.37499 0,7.93896 6.41386,14.37496 14.3125,14.37496 7.89865,0 14.28125,-6.436 14.28125,-14.37496 0,-7.939 -6.3826,-14.37499 -14.28125,-14.37499 z"
+                style="fill:#383D50;fill-opacity:1;stroke:#383D50;stroke-width:1.07500005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+              />
+            </g>
+          </svg>
+        </a>
       </address>
     </footer>
   </body>

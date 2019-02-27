@@ -60,9 +60,15 @@ h5 {
   text-decoration: none;
 }
 
+.social-link,
 .signin-link,
 .agreement-link {
   display: inline-block;
   text-decoration: underline;
   color: #a5abc5;
+}
+
+.social-link {
+  text-decoration: none;
+  color: #c6ccea;
 }
