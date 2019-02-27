@@ -110,11 +110,6 @@ main .button {
   flex-direction: row;
   margin-top: 42px;
 }
-.lang-to {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-}
 
 /* Timeline section */
 .timeline-info {
@@ -145,4 +140,8 @@ main .button {
   display: flex;
   justify-content: center;
   margin: 3vw 0 4vw 0;
+}
+.card-props {
+  display: flex;
+  flex-wrap: wrap;
 }

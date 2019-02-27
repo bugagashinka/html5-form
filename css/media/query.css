@@ -70,6 +70,9 @@
   }
 
   /* Payment section elements*/
+  .field-block {
+    width: initial;
+  }
   .input-field {
     width: 315px;
     margin-top: 0.5em;
@@ -336,7 +339,7 @@
   footer .container {
     flex-direction: row;
     justify-content: space-between;
-    padding: 90px 1em;
+    padding: 90px 3em;
   }
   .goal {
     width: 225px;
@@ -361,12 +364,5 @@
   /* Timeline section */
   .timeline-info {
     padding: 28px 43px 28px 70px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  /* FOOTER */
-  footer .container {
-    padding: 90px 0;
   }
 }
